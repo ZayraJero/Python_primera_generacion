@@ -1,25 +1,23 @@
 {% extends "base.html" %} 
 
 {% block title %}
-<title>Owners</title>
+<title>Pets</title>
 {% endblock title %} 
 
 {% block header %}
-<h1>Owners list</h1>
+<h1>Pets list</h1>
 {% endblock header %} 
 
 {% block content %}
 <table>
   <tr>
     <th>ID</th>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Name</th>
   </tr>
-  {% for owner in owners %}
+  {% for pet in pets %}
   <tr>
-    <td>{{ owner.id }}</td>
-    <td>{{ owner.first_name }}</td>
-    <td>{{ owner.last_name }}</td>
+    <td>{{ pet.id }}</td>
+    <td>{{ pet.name }}</td>
   </tr>
   {% endfor %}
 </table>
