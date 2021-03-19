@@ -16,7 +16,11 @@
   </tr>
   {% for pet in pets %}
   <tr>
-    <td>{{ pet.id }}</td>
+    <td>
+      <a href="{% url 'vet:pets_detail' pk=pet.id %}">
+      {{ pet.id }}
+      </a>
+    </td>
     <td>{{ pet.name }}</td>
   </tr>
   {% endfor %}
