@@ -9,20 +9,29 @@
 {% endblock header %} 
 
 {% block content %}
-<table>
+<table class="table">
   <tr>
     <th>ID</th>
     <th>Name</th>
   </tr>
   {% for pet in pets %}
   <tr>
-    <td>
+    <th scope="row">
       <a href="{% url 'vet:pets_detail' pk=pet.id %}">
       {{ pet.id }}
       </a>
-    </td>
+    </th>
     <td>{{ pet.name }}</td>
+    <td>{{ pet.type }}</td>
+    <td>
+      <a href="{% url 'vet:pets_update' pk=pet.id %}">
+          Update
+      </a>
+  </td>
   </tr>
   {% endfor %}
 </table>
+
+  <a type="button" class="btn btn-outline-primary" href="{% url 'vet:pets_create' %}">Add new</a>
+
 {% endblock content %}

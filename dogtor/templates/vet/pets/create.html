@@ -3,11 +3,11 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-<title>Create Owner</title>
+<title>Create Pet</title>
 {% endblock title %}
 
 {% block header %}
-<h1>Create Owner</h1>
+<h1>Create Pet</h1>
 {% endblock header %}
 
 {% block content %}
@@ -15,7 +15,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-    <button type="submit" class="btn btn-outline-primary">Create Owner</button>
+    <button type="submit" class="btn btn-outline-primary">Create Pet</button>
 </form>
 
 {% endblock content %}

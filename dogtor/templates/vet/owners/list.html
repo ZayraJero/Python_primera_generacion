@@ -9,7 +9,7 @@
 {% endblock header %} 
 
 {% block content %}
-<table>
+<table class="table"> 
   <tr>
     <th>ID</th>
     <th>First Name</th>
@@ -17,14 +17,22 @@
   </tr>
   {% for owner in owners %}
   <tr>
-    <td>
+    <th scope="row">
       <a href="{% url 'vet:owners_detail' pk=owner.id %}">
       {{ owner.id }}
       </a>
-    </td>
+    </th>
     <td>{{ owner.first_name }}</td>
     <td>{{ owner.last_name }}</td>
+    <td>
+      <a href="{% url 'vet:owners_update' pk=owner.id %}">
+          Update
+      </a>
+  </td>
   </tr>
   {% endfor %}
 </table>
+
+  <a type="button" class="btn btn-outline-primary" href="{% url 'vet:owners_create' %}">Add new</a>
+
 {% endblock content %}

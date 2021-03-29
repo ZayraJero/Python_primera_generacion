@@ -1,10 +1,24 @@
-<nav>
-  <ul>
-    <li>
-      <a href="/vet/owners/"> Owners </a>
-    </li>
-    <li>
-      <a href="/vet/pets/"> Pets </a>
-    </li>
-  </ul>
-</nav>
+{% if user.is_authenticated %}
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link text-white" href="{% url 'home' %}">
+      Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="{% url 'vet:pets_list' %}">
+      Pets
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="{% url 'vet:owners_list' %}">
+      Owners
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="{% url 'logout' %}">
+      Log Out!
+    </a>
+  </li>
+</ul>
+{% endif %}
