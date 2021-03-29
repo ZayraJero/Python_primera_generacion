@@ -52,26 +52,24 @@ urlpatterns = [
     path(
         "dates/<int:pk>/destroy/", DestroyDatesAPIView.as_view(), name="destroy-dates"
     ),
+    path("branches/", ListBranchOfficesAPIView.as_view(), name="list-branchoffices"),
     path(
-        "branchoffices/", ListBranchOfficesAPIView.as_view(), name="list-branchoffices"
-    ),
-    path(
-        "branchoffices/create/",
+        "branches/create/",
         CreateBranchOfficesAPIView.as_view(),
         name="create-branchoffices",
     ),
     path(
-        "branchoffices/<int:pk>/",
+        "branches/<int:pk>/",
         RetrieveBranchOfficesAPIView.as_view(),
         name="retrieve-branchoffices",
     ),
     path(
-        "branchoffices/<int:pk>/update/",
+        "branches/<int:pk>/update/",
         UpdateBranchOfficesAPIView.as_view(),
         name="update-branchoffices",
     ),
     path(
-        "branchoffices/<int:pk>/destroy/",
+        "branches/<int:pk>/destroy/",
         DestroyBranchOfficesAPIView.as_view(),
         name="destroy-branchoffices",
     ),
@@ -91,7 +89,7 @@ urlpatterns = [
         name="retrieve-pet-dates",
     ),
     path(
-        "branchoffices/<int:pk>/dates/",
+        "branches/<int:pk>/dates/",
         RetrieveBranchOfficesDatesAPIView.as_view(),
         name="retrieve-branchoffice-dates",
     ),
