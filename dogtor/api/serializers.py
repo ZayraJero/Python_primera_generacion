@@ -116,7 +116,7 @@ class PetDatesSerializer(serializers.ModelSerializer):
 
 
 class BranchOfficeDatesSerializer(serializers.ModelSerializer):
-    office_dates = DatesListSerializer(many=True)
+    branch_office = DatesListSerializer(many=True)
 
     class Meta:
         model = BranchOffice
@@ -129,7 +129,7 @@ class BranchOfficeDatesSerializer(serializers.ModelSerializer):
             "longitude",
             "latitude",
             "created_at",
-            "office_dates",
+            "branch_office",
         ]
 
 
