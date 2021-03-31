@@ -1,5 +1,7 @@
 from rest_framework import generics
 
+from django.contrib.auth.models import User
+
 from vet.models import PetOwner, Pet, PetDate, BranchOffice
 
 from .serializers import (
@@ -16,6 +18,8 @@ from .serializers import (
     PetDatesSerializer,
     BranchOfficeDatesSerializer,
     OwnerPetsDatesSerializer,
+    #
+    UsersSerializer,
 )
 
 # # Create your views here.
@@ -149,6 +153,18 @@ class RetrieveBranchOfficesDatesAPIView(generics.RetrieveAPIView):
 class RetrieveOwnerPetsDatesAPIView(generics.RetrieveAPIView):
     queryset = PetOwner.objects.all()
     serializer_class = OwnerPetsDatesSerializer
+
+
+### GENERIC VIEWS CONJUNTAS, PERMITE MAS METODOS
+class RetrieveUpdatePetsAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Pet.objects.all()
+    serializer_class = PetsSerializer
+
+
+# USER
+class CreateUsersAPIView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UsersSerializer
 
 
 #     VIEWSET
