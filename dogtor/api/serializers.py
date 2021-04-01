@@ -167,6 +167,7 @@ class UsersSerializer(serializers.ModelSerializer):
 
     def create(self, validate_data):
         print(validate_data)
+        # validate_data["is_staff"] = True
         user = User.objects.create_user(**validate_data)
 
         return user
